@@ -8,7 +8,7 @@ TFile *ficheiro = new TFile("AmberTarget_Run_0.root","READ");
         Double_t minBIn = 0.0;
         Double_t maxBin = 80000;
         Double_t maxBinM = 18000;
-        Double_t maxBinR=90000;
+        Double_t maxBinR= 130000;
  
         
         Int_t number_Hist = 3;
