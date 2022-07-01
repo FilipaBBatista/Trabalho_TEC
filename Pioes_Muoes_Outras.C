@@ -37,7 +37,7 @@ for(Int_t i = 0; i < nHistos; i++){
 		dados->Draw(folhaNamePioes + ">>" + HistoNome, "particlePDG==211 || particlePDG==-211 && " + folhaNamePioes + ">10");
 		histo_Pioes[i]->SetFillColor(i+1);
        	histo_Pioes[i]->Write();
-        histo_Pioes[i]->SetTitle("Pioes - Detector" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
+        histo_Pioes[i]->SetTitle("Pioes -> Detector" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
         gPad->SetLogy();
         TF1 *landouFitPioes = new TF1 ("landouFitPioes", "landau", 0, 30000);
         histo_Pioes[i]->Fit("landouFitPioes");
@@ -67,7 +67,7 @@ for(Int_t i = 0; i < nHistos; i++){
 		dados->Draw(folhaNameMuoes + ">>" + HistoNome, "particlePDG==13 || particlePDG==-13 && "+folhaNameMuoes+">10");
 		histo_Muoes[i]->SetFillColor(i+1);
     	histo_Muoes[i]->Write();
-    	histo_Muoes[i]->SetTitle("Muoes - Detetor" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
+    	histo_Muoes[i]->SetTitle("Muoes -> Detetor" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
     	gPad->SetLogy();
         TF1 *landouFitMuoes = new TF1 ("landouFitMuoes", "landau", 0, 30000);
        	histo_Muoes[i]->Fit("landouFitMuoes");
@@ -97,7 +97,7 @@ for(Int_t i = 0; i < nHistos; i++){
 		dados->Draw(folhaNameOutras + ">>" + HistoNome, "particlePDG!=13 || particlePDG!=-13 || particlePDG!=211 || particlePDG!=-211");
 		histo_Outras[i]->SetFillColor(i+1);
        	histo_Outras[i]->Write();
-        histo_Outras[i]->SetTitle("Restantes - Detetor" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
+        histo_Outras[i]->SetTitle("Outras -> Detetor" + TString::Itoa(i, 10) + "; log(EdepDet0_keV)");
         gPad->SetLogy();
         //TF1 *landouFiOutras = new TF1 ("landouFitOutras", "landau", 0, 30000);
        	//histo_Outras[i]->Fit("landouFitOutras");
