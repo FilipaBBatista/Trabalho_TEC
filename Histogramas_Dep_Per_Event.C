@@ -1,10 +1,13 @@
-void Histogramas_Dep_Per_Event(){
+void Histogramas_Dep_Per_Event(TString ficheiroLido){
 
-//ler ficheiro
-TFile *ficheiro = new TFile("AmberTarget_Run_0.root", "READ");
-//criar ficheiro
-TFile *ficheiroGravar = new TFile("Analise.root", "RECREATE");
-//buscar a arvore certa
+TFile *ficheiro = new TFile("AmberTarget_Run_0.root","READ");
+	
+TString novoFicheiro = ficheiroLido;
+novoFicheiro.ReplaceAll("AmberTarget_Run_","Analise_Histogramas_Dep_Per_Event_");
+
+
+TFile *ficheiroGravar = new TFile(novoFicheiro, "RECREATE");
+
 TTree *dados = (TTree*)ficheiro->Get("edep_Per_Event");
 
 
@@ -13,19 +16,21 @@ Double_t minBin=0.0;
 Double_t maxBin=400000;
 
 Int_t nHistos=4;
-//criar o nosso histograma
 TH1D* histoDetetor[nHistos];
-TCanvas *canvas[nHistos];
+
+
+TCanvas *canvas = new TCanvas("canvas", novoFicheiro, 900, 700);
+	gStyle->SetOptStat(0);
+	canvas->Divide(2,2,0,0);
 TString branchName;
-TString canvasName;
+
 
 
 for (Int_t i=0;i<nHistos;i++){
-	TString histoName="histoDetetor"+TString::Itoa(i,10);
+	TString histoName="Histogramas_Dep_Per_Event Detector"+TString::Itoa(i,10);
 	histoDetetor[i]=new TH1D (histoName,histoName,nBins,minBin,maxBin);
 	branchName="detector"+TString::Itoa(i,10);
-	canvasName="canvas"+TString::Itoa(i,10);
-	canvas[i]=new TCanvas(canvasName,canvasName);
+	canvas->cd(i+1);
 	dados->Draw(branchName+">>"+histoName,branchName+">0");
 	histoDetetor[i]->SetTitle(histoName);
 	histoDetetor[i]->SetLineColor(i+1);
