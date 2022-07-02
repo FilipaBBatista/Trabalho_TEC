@@ -1,0 +1,20 @@
+Na unidade curricular Tópicos em Engenharia Computacional II, desenvolvemos conhecimentos sobre a ferramenta Git, um DVCS, ou seja, Sistema de controle de versões distribuído, muito útil para facilitar partilhas de código entre os elementos de nosso grupo e registrar todas as alterações feitas nestes, o que nos permite voltar a versões anteriores facilmente em caso de erros inesperados.
+
+	No presente trabalho analisamos uma série de dados fornecidos nos quais aplicamos os conhecimentos adquiridos na unidade curricular. Para o manuseamento dos códigos, existem conceitos básicos do Git que tivemos que dominar para o fazermos a partir do terminal Linux. Estes são:
+Repositórios: Ambientes com intuito para o armazenamento dos códigos feitos. Criação de repositório: git init
+Branch: Ponteiros para as alterações feitas no projeto. Criamos uma nova branch com o comando git branch [nome] no terminal e, caso queiramos mudar para a branch criada, utilizamos git checkout [nome]. Para apagar uma branch, faz-se git branch -d [nome]
+Merge: Ferramenta para união das alterações feitas no projeto.
+Git clone: Comando para clonar um código de um repositório para sua posterior manipulação em outro ambiente.
+Git commit: Adicionar as modificações recentes do código para o repositório.
+Git push e pull: Utiliza-se o push para enviar ficheiros de um repositório local para o github e o pull para trazer um ficheiro do github para o repositório local.
+
+
+
+Utilizamos também o software ROOT, uma ferramenta muito utilizada pelos físicos para analisar dados e efetuar simulações. Com ele, podemos salvar dados em forma binária num ficheiro ROOT. Fornece também uma estrutura de dados, a árvore, que é muito poderosa para acesso rápido de grande quantidade de dados.
+Para a resolução do trabalho, utilizamos os seguintes comandos ROOT: 
+TString: Classe String.
+TH1D: Definição de um histograma 1D.
+TH2D: Definição de um histograma 2D.
+TFile: Leitura de ficheiros .ROOT.
+TTree: Lista de colunas ou branches independentes representados pela classe TBranch
+TCanvas: Definição de páginas para inserção de histogramas.
