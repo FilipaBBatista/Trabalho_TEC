@@ -3,7 +3,7 @@ void Histogramas_DistXY_Detetor_Particula(TString ficheiroLido){
 TFile *ficheiro = new TFile("AmberTarget_Run_0.root","READ");
 	
 TString novoFicheiro=ficheiroLido;
-novoFicheiro.ReplaceAll("AmberTarget_Run_","Analise_Hitogramas_DistXY_Detetor_");
+novoFicheiro.ReplaceAll("AmberTarget_Run_","Analise_Hitogramas_DistXY_Detetor_Particula_");
 	
 TFile *ficheiroGravar = new TFile(novoFicheiro,"RECREATE");
 TTree *dados = (TTree*) ficheiro->Get("Hits");
